@@ -1,0 +1,25 @@
+# Oracle DB Exporter configuration.
+# Environment variables of the form ${VAR_NAME} will be expanded.
+#
+# oracledb_exporter >= 2.0.0 requires --config.file instead of the old
+# --default.metrics/--log.disable flags. This file replaces those flags and
+# the DB_USERNAME/DB_PASSWORD/DB_CONNECT_STRING/DB_ROLE/TNS_ADMIN environment
+# variables used by oracledb_exporter < 2.0.0. Set the same environment
+# variables in /etc/default/oracledb_exporter as before, or edit the values
+# below directly.
+
+databases:
+  default:
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    url: ${DB_CONNECT_STRING}
+    # role: ${DB_ROLE}
+    # tnsAdmin: ${TNS_ADMIN}
+
+metrics:
+  # Path to default metrics file.
+  default: /etc/prometheus/oracledb_exporter_default-metrics.toml
+
+log:
+  # Set disable to 1 to disable alert log collection.
+  disable: 1
