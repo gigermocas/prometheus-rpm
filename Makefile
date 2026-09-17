@@ -56,6 +56,7 @@ squid_exporter \
 dellhw_exporter \
 exim_exporter \
 systemd_exporter \
+logstash_exporter \
 oracledb_exporter
 
 .PHONY: $(MANUAL) $(AUTO_GENERATED)
